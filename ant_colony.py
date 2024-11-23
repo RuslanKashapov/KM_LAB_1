@@ -294,7 +294,7 @@ def start_algorithm(matrix):
     optimizer = AntColonyOptimizer(ants=50, evaporation_rate=.1, intensification=2, alpha=1, beta=1, beta_evaporation_rate=0, choose_best=.1)
     best = optimizer.fit(problem, 100)
     solution = optimizer.best_path
-    return best, solution
+    return int(best)
 
 
-print(start_algorithm(matrix))
+#print(start_algorithm(matrix))
