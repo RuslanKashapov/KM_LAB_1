@@ -273,20 +273,20 @@ class AntColonyOptimizer:
             plt.title("Ant Colony Optimization Results (best: {})".format(np.round(self.best, 2)))
             plt.show()
 
-dig = 50
+# dig = 50
 
-# Создаем пустую матрицу размером 50 на 50
-matrix = [[0 for x in range(dig)] for y in range(dig)]
+# # Создаем пустую матрицу размером 50 на 50
+# matrix = [[0 for x in range(dig)] for y in range(dig)]
 
-# Заполняем матрицу случайными числами
-for i in range(dig):
-    for j in range(dig):
-        if i == j:
-            matrix[i][j] = 0
-        else:
-            value = random.randint(100, 1000)
-            matrix[i][j] = value
-            matrix[j][i] = value
+# # Заполняем матрицу случайными числами
+# for i in range(dig):
+#     for j in range(dig):
+#         if i == j:
+#             matrix[i][j] = 0
+#         else:
+#             value = random.randint(100, 1000)
+#             matrix[i][j] = value
+#             matrix[j][i] = value
 
 
 def start_algorithm(matrix):
@@ -297,4 +297,4 @@ def start_algorithm(matrix):
     return best, solution
 
 
-print(start_algorithm(matrix))
+# print(start_algorithm(matrix))
