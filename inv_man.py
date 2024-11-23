@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.stats import poisson
 from ant_colony import start_algorithm
+from cargo_distribution import cargo_distribution
 import random
 
 class InventoryManagement:
@@ -120,8 +121,12 @@ class InventoryManagement:
     
     def call_routing(self, customers_demand):
         """ Вызов маршрутизации """
-        best, solution = start_algorithm(self.clients_matrix)
-        print(f"Длина пути: {best}")
+        # best = start_algorithm(self.clients_matrix)
+        print(customers_demand)
+        print(self.clients_matrix)
+        best = cargo_distribution(customers_demand, self.clients_matrix)
+        
+        print(f"Стоимость пути: {best}")
 
 
 
