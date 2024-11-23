@@ -83,11 +83,12 @@ class InventoryManagement:
     def generate_clients(self, dig):
         """ Генерация матрицы расстояний между клиентами """
         # Создаем пустую матрицу размером 50 на 50
-        matrix = [[0 for x in range(dig)] for y in range(dig)]
+        points = dig+1
+        matrix = [[0 for x in range(points)] for y in range(points)]
 
         # Заполняем матрицу случайными числами
-        for i in range(dig):
-            for j in range(dig):
+        for i in range(points):
+            for j in range(points):
                 if i == j:
                     matrix[i][j] = 0
                 else:
@@ -102,7 +103,7 @@ class InventoryManagement:
         """ Генерация спроса по каждому клиенту и суммарно """
         now_customer_amount = random.randint(3, self.dig - 2)
 
-        numbers = list(range(self.dig))
+        numbers = list(range(1, self.dig+1))
     
         # Выбираем x случайных чисел из списка
         random_numbers = sorted(random.sample(numbers, now_customer_amount))
@@ -122,8 +123,8 @@ class InventoryManagement:
     def call_routing(self, customers_demand):
         """ Вызов маршрутизации """
         # best = start_algorithm(self.clients_matrix)
-        print(customers_demand)
-        print(self.clients_matrix)
+        # print(customers_demand)
+        # print(self.clients_matrix)
         best = cargo_distribution(customers_demand, self.clients_matrix)
         
         print(f"Стоимость пути: {best}")
